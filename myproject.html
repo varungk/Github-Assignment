@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Decision tree</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AhKy1C0JB3b5X-2hpYpJbCDvT0QFs6WJENtlTwnGFRYOlga3pK2qeg0rh_oL7tk3LVwiwowJP2BRA7HANJ88bLoKz45jYextxY6suKJQBie8wMBvgtHTOcGc7DaIG-7EU3Sm--oQLU-sRCsy0YOO5WsRS28ZNUWUxO9t9bmulV3Byokfv2nhkkxKdnzY08EnhmMgWyfpCtJ4aRQCGlA6vpJ50VVK8-BDQgBv8nYldH2CFlvhAQtMWqCJV94v2E3JDg-yEwOr-q9g51ju8yHUjYQ8-f6ghL9ubDf8meyJfmLlUp-Tr4wtArby8OykO1B4iyyzJSs4GsCAKVfxfpVB7mpa1mN-EL7dfHqk7vV8fTS7iQQaWycExNdsMtyUKO8QNS7SFB8OHWGq7_JGnzGfwTyRHdYq2bUzLZr6Os0qZLmg9pX4o-tzYPB6lhXvDFDfRl3qRF_5RQsE22JdBR3Nv3-nR_1s6WX2v3DOAzVNDLgU3OsDCgv1lZmRGE19vX0bQ4OV43uEc2nFU04r-C6N3QjopFMENwK0fbiqTmuorxKnlERJ1QN6h_1wobfj_6IP-2_3etglSNf62OupOXrp7mOPiXKP060y7cJaqs1uAVsKobPCP-7WMwg3STduYLfebdCJH5C3-TIYXjsEEJNlccq-wvPCoPyI9Iy2Yog2L3a-t32d9UWZDILG7KHqQHL7loDPGKdoJqUjoy0T4nzAO6ndRM-R8gh9aXIDwrFgtISOdLKWd-Y-oaEEbeQLBAwCKsu-IgHuEUPgwzEwwn-OpGrs9DmN8zc1jbc2K_yMKaTzWYsqw5YC2IsDEKMVAKpcyxMId3jXcrT9VrvXvdxGir-_urGjRCFsjtRx2ylSoxKp_Gbh8BI3Fff5ZJXbTvAJJO-9TzfITXBECSDRa1IzbwXXUWkLtpsP_efWpyDOOWQRST7NGyxKlQH9gsN52aTfS6udny6v-6sYZIEnuEDkFBFZKAQqvcfh1Yi9cf89kUmoBiPs_-G737h7jMTikJ-CPmY-DgVfw5uqxPW1ie9vqxayALMMi4zm8e7BTO3TYzuiwbJwPULOuvSkSMXEeUUpHVk5N5HpXfnXFD3SWa_5RmsYKHAJ4Lmx816y_ZVL5PlJO4S2SH1FSTR2ZpfWsNelmzALTB-bz-PiisOqtv7MgxghmmVLOcIY2nHc46XzodXcmZb_eSCq4wSS8mQpBa2DT1lbvL62Uio28THWcMrQLdmENaoJTWasMD58jNmrdZgTuDV6Y15_D2pE4iWv9ZMg2tmvD08bVU0KrvPTLCtHYakvtWhIt23YUli3VxKPdIaouj4DmJmIbAywfG2ww5C2XVZq5sC7Xz0tZ79viVmtB402zhG-4oEi1xBs_I8n2LRRnsOOM6UuvwySqWk6RRm8z298zKk1oADt94ovS6421DC9tI67UpP3SIJXQZPDkmffT6RDbBn4Dnf5C_XQKU9nnGCSVXEeWNEg15VAHxXqd3qau-Us7Xsexv8XDgyaUv3d_Ns2fYw3Olwoe1FE8iVzfeUb9t-6VB25KuqJzKoXAA" nonce="37f2d35cd4f0baed339ca525c2fc0d7c" charset="UTF-8"></script><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<style>
+		.result {
+			display: none;
+		}
+		.dis{
+			padding-left: 35%; 
+		}
+		#ans{
+			padding-left: 15%;
+		}
+		.c1{
+			background-color: #B8C0FF;
+		}
+		.c2{
+			background-color: #C8B6FF;
+		}
+		.c3{
+			background-color: #E7C6FF;
+		}
+	</style>
+	<body style="background-color: #B8C0FF;">
+		<div class = "jumbotron jumbotron-fluid c1">
+			<div class = "container-fluid p-3 c1 text-center text-black">
+				<h1>Decision tree</h1>
+			</div>
+		</div>
+		<div class = "container-fluid c2">
+			<h3>Enter the following inputs</h3>
+			<br>
+			<div class="row">
+				<div class="col-sm-3">
+					<h5 class = "text-center">Build</h5>
+					<form class="form-group" action="/action_page.php">
+						<div class = "container p-3 my-3 bg-dark text-white">
+							<h4 class = "">Simple:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="b_s_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="b_s_a" placeholder="Enter buying amount">
+							<h4 class = "">Difficult:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="b_d_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="b_d_a" placeholder="Enter buying amount">
+						</div>
+					</form>	
+				</div>
+				<div class="col-sm-3">
+					<h5 class = "text-center">Reuse</h5>
+					<form class="form-group" action="/action_page.php">
+						<div class = "container p-3 my-3 bg-dark text-white">
+							<h4 class = "">Major changes:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="r_ma_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="r_ma_a" placeholder="Enter buying amount">
+							<h4 class = "">Minor Changes:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="r_mi_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="r_mi_a" placeholder="Enter buying amount">
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<h5 class = "text-center">Buy</h5>
+					<form class="form-group" action="/action_page.php">
+						<div class = "container p-3 my-3 bg-dark text-white">
+							<h4 class = "">Major changes:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bu_ma_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bu_ma_a" placeholder="Enter buying amount">
+							<h4 class = "">Minor changes</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bu_mi_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bu_mi_a" placeholder="Enter buying amount">
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<h5 class = "text-center">Contract</h5>
+					<form class="form-group" action="/action_page.php">
+						<div class = "container p-3 my-3 bg-dark text-white">
+							<h4 class = "">With changes:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="c_w_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="c_w_a" placeholder="Enter buying amount">
+							<h4 class = "">Without changes:</h4>
+							<label for="email2" class="mb-2 mr-sm-2">Probability</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="c_wo_p" placeholder="Enter probability">
+							<label for = "pwd2" class="mb-2 mr-sm-2">buy</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="c_wo_a" placeholder="Enter buying amount">
+						</div>
+					</form>
+				</div>
+			</div>
+			<button type="button" class="btn btn-success" onclick="clickme()">Get Result</button>
+		</div>
+		<div class="container-fluid result c3" id="temp">
+			<div class="container">      
+				<table class="table table-borderless">
+				  <thead>
+					<tr>
+					  <th>Type</th>
+					  <th>Probability</th>
+					  <th>Amount</th>
+					  <th>Probability</th>
+					  <th>Amount</th>
+					  <th>Total Amount</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+						<td>Build</td>
+						<td id='a'></td>
+						<td id='b'></td>
+						<td id='c'></td>
+						<td id='d'></td>
+						<td id='1'></td>
+					</tr>
+					<tr>
+						<td>Reuse</td>
+						<td id='e'></td>
+						<td id='f'></td>
+						<td id='g'></td>
+						<td id='h'></td>
+						<td id='2'></td>
+					</tr>
+					<tr>
+						<td>Buy</td>
+						<td id='i'></td>
+						<td id='j'></td>
+						<td id='k'></td>
+						<td id='l'></td>
+						<td id='3'></td>
+					</tr>
+					<tr>
+						<td>Contract</td>
+						<td id='m'></td>
+						<td id='n'></td>
+						<td id='o'></td>
+						<td id='p'></td>
+						<td id='4'></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+			<div class="dis">
+				<h3>The best possible option is to</h3>
+				<h3 id = "ans"></h3>
+			</div>
+		</div>
+		</body>
+		<script src="myproject.js"></script>
+	</body>
+</html>
